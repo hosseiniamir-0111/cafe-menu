@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منوی تنقلات | کافه امیر</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Vazirmatn", sans-serif;
+      }
+      body {
+        background: linear-gradient(to bottom right, #c2f0c2, #e0f7fa);
+        min-height: 100vh;
+        padding: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 25px;
+        width: 90%;
+        max-width: 900px;
+      }
+      .item {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+      .item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 3px solid #fcb69f;
+      }
+      .info {
+        padding: 15px;
+        text-align: center;
+      }
+      .info h3 {
+        margin-bottom: 8px;
+        color: #2c3e50;
+      }
+      .info p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .price {
+        font-weight: bold;
+        color: #ff6f61;
+        font-size: 1.1rem;
+      }
+      .back-btn {
+        margin-top: 40px;
+        text-decoration: none;
+        background: #ff6f61;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        transition: background 0.3s ease;
+      }
+      .back-btn:hover {
+        background: #ff856f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🍪 منوی تنقلات</h1>
+
+    <div class="menu-container">
+      <div class="item">
+        <img src="images/chips.jpg" alt="چیپس" />
+        <div class="info">
+          <h3>چیپس</h3>
+          <p>چیپس تازه و خوشمزه با طعم‌های مختلف.</p>
+          <div class="price">۲۰,۰۰۰ تومان</div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/popcorn.jpg" alt="پاپ‌کورن" />
+        <div class="info">
+          <h3>پاپ‌کورن</h3>
+          <p>ذرت بو داده با طعم‌های متنوع.</p>
+          <div class="price">۱۵,۰۰۰ تومان</div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/nuts.jpg" alt="آجیل" />
+        <div class="info">
+          <h3>آجیل</h3>
+          <p>مخلوط آجیل تازه و سالم.</p>
+          <div class="price">۳۵,۰۰۰ تومان</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">بازگشت به منوی اصلی</a>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منوی فست فود | کافه امیر</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Vazirmatn", sans-serif;
+      }
+      body {
+        background: linear-gradient(to bottom right, #fbc279, #ffecd2);
+        min-height: 100vh;
+        padding: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 25px;
+        width: 90%;
+        max-width: 900px;
+      }
+      .item {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+      .item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 3px solid #fcb69f;
+      }
+      .info {
+        padding: 15px;
+        text-align: center;
+      }
+      .info h3 {
+        margin-bottom: 8px;
+        color: #2c3e50;
+      }
+      .info p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .price {
+        font-weight: bold;
+        color: #ff6f61;
+        font-size: 1.1rem;
+      }
+      .back-btn {
+        margin-top: 40px;
+        text-decoration: none;
+        background: #ff6f61;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        transition: background 0.3s ease;
+      }
+      .back-btn:hover {
+        background: #ff856f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🍔 منوی فست فود</h1>
+
+    <div class="menu-container">
+      <div class="item">
+        <img src="images/burger.jpg" alt="همبرگر" />
+        <div class="info">
+          <h3>همبرگر</h3>
+          <p>همبرگر خوشمزه با گوشت تازه و پنیر.</p>
+          <div class="price">۷۰,۰۰۰ تومان</div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/pizza.jpg" alt="پیتزا" />
+        <div class="info">
+          <h3>پیتزا</h3>
+          <p>پیتزای کلاسیک با پنیر و تاپینگ‌های مختلف.</p>
+          <div class="price">۹۰,۰۰۰ تومان</div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sandwich.jpg" alt="ساندویچ" />
+        <div class="info">
+          <h3>ساندویچ</h3>
+          <p>ساندویچ تازه با سبزیجات و گوشت یا مرغ.</p>
+          <div class="price">۶۵,۰۰۰ تومان</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">بازگشت به منوی اصلی</a>
+  </body>
+</html>
