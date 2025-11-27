@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نوشیدنی سرد | Velvet Breeze Café</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Vazirmatn", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
+      }
+      header {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #2c3e50;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        position: relative;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      }
+      #back-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #fff;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        font-weight: 600;
+      }
+      #lang-toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #fff;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        font-weight: 600;
+      }
+      main {
+        width: 90%;
+        max-width: 1000px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+      .item {
+        background: #fff;
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .item img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .item h3 {
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+      }
+      .item p {
+        font-weight: 600;
+        color: #d97757;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      نوشیدنی سرد 🧊
+      <button id="back-btn">←</button>
+      <button id="lang-toggle">EN</button>
+    </header>
+
+    <main>
+      <div class="item">
+        <img src="images/Blue-Lagoon.jpg" alt="آبمیوه پرتقال" />
+        <h3>آبمیوه پرتقال</h3>
+        <p>25,000 تومان</p>
+      </div>
+      <div class="item">
+        <img src="images/Iced-Mocha.jpg" alt="آبمیوه پرتقال" alt="آبمیوه سیب" />
+        <h3>آبمیوه سیب</h3>
+        <p>25,000 تومان</p>
+      </div>
+      <div class="item">
+        <img
+          src="images/Iced-Matcha.jpg"
+          alt="آبمیوه پرتقال"
+          alt="اسموتی توت
+        فرنگی"
+        />
+        <h3>اسموتی توت فرنگی</h3>
+        <p>35,000 تومان</p>
+      </div>
+      <div class="item">
+        <img src="images/Iced-Latte.jpg" alt="آبمیوه پرتقال" alt="اسموتی موز" />
+        <h3>اسموتی موز</h3>
+        <p>35,000 تومان</p>
+      </div>
+      <div class="item">
+        <img src="images/Frappuccino.jpg" alt="آبمیوه پرتقال" alt="لیموناد" />
+        <h3>لیموناد</h3>
+        <p>20,000 تومان</p>
+      </div>
+      <div class="item">
+        <img src="images/Cold-Brew.jpg" alt="آبمیوه پرتقال" alt="شیک شکلات" />
+        <h3>شیک شکلات</h3>
+        <p>40,000 تومان</p>
+      </div>
+    </main>
+
+    <script>
+      const toggle = document.getElementById("lang-toggle");
+      const html = document.documentElement;
+      const header = document.querySelector("header");
+      const items = document.querySelectorAll(".item h3");
+      const prices = document.querySelectorAll(".item p");
+
+      let isEnglish = false;
+
+      const faTexts = {
+        header: "نوشیدنی سرد 🧊",
+        names: [
+          "آبمیوه پرتقال",
+          "آبمیوه سیب",
+          "اسموتی توت فرنگی",
+          "اسموتی موز",
+          "لیموناد",
+          "شیک شکلات",
+        ],
+        prices: [
+          "25,000 تومان",
+          "25,000 تومان",
+          "35,000 تومان",
+          "35,000 تومان",
+          "20,000 تومان",
+          "40,000 تومان",
+        ],
+      };
+      const enTexts = {
+        header: "Cold Drinks 🧊",
+        names: [
+          "Orange Juice",
+          "Apple Juice",
+          "Strawberry Smoothie",
+          "Banana Smoothie",
+          "Lemonade",
+          "Chocolate Shake",
+        ],
+        prices: ["$1", "$1", "$2", "$2", "$1", "$2"],
+      };
+
+      const applyLang = () => {
+        html.lang = isEnglish ? "en" : "fa";
+        html.dir = isEnglish ? "ltr" : "rtl";
+        toggle.textContent = isEnglish ? "FA" : "EN";
+        header.childNodes[0].textContent = isEnglish
+          ? enTexts.header
+          : faTexts.header;
+        items.forEach(
+          (h3, i) =>
+            (h3.textContent = isEnglish ? enTexts.names[i] : faTexts.names[i])
+        );
+        prices.forEach(
+          (p, i) =>
+            (p.textContent = isEnglish ? enTexts.prices[i] : faTexts.prices[i])
+        );
+        localStorage.setItem("lang", isEnglish ? "en" : "fa");
+      };
+
+      // بارگذاری زبان ذخیره شده
+      const savedLang = localStorage.getItem("lang") || "fa";
+      if (savedLang === "en") isEnglish = true;
+      applyLang();
+
+      toggle.addEventListener("click", () => {
+        isEnglish = !isEnglish;
+        applyLang();
+      });
+
+      // دکمه برگشت
+      document.getElementById("back-btn").addEventListener("click", () => {
+        history.back();
+      });
+    </script>
+  </body>
+</html>
